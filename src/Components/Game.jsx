@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState, useCallback, useMemo } from "react";
 
 const Game = () => {
   const [value, setValue] = useState("");
@@ -6,20 +6,11 @@ const Game = () => {
   const [win, setWin] = useState("");
   const [userScore, setUserScore] = useState(0);
   const [computerScore, setComputerScore] = useState(0);
-  const data = ["rock", "paper", "scissors"];
 
-  // Memoize handleRes to avoid unnecessary re-renders
-  const handleRes = useCallback(() => {
-    if (value) {
-      const randIndex = Math.floor(Math.random() * data.length);
-      const computerChoice = data[randIndex];
-      setComvalue(computerChoice);
-      const result = determineWinner(value, computerChoice);
-      setWin(result);
-    }
-  }, [value, data]);
+  // Memoize the data array to ensure it is stable
+  const data = useMemo(() => ["rock", "paper", "scissors"], []);
 
-  const determineWinner = (userChoice, computerChoice) => {
+  const determineWinner = useCallback((userChoice, computerChoice) => {
     if (userChoice === computerChoice) {
       return "It's a tie!";
     }
@@ -33,11 +24,22 @@ const Game = () => {
     }
     setComputerScore(prevScore => prevScore + 1);
     return "Computer won!";
-  };
+  }, []);
+
+  // Use useCallback for handleRes to stabilize the function
+  const handleRes = useCallback(() => {
+    if (value) {
+      const randIndex = Math.floor(Math.random() * data.length);
+      const computerChoice = data[randIndex];
+      setComvalue(computerChoice);
+      const result = determineWinner(value, computerChoice);
+      setWin(result);
+    }
+  }, [value, data, determineWinner]); // Ensure dependencies are correct
 
   useEffect(() => {
     handleRes();
-  }, [value, handleRes]);
+  }, [handleRes]); // Correct dependency
 
   return (
     <div className="p-4 sm:p-6 lg:p-8">
