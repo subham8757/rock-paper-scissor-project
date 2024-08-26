@@ -1,90 +1,76 @@
+# 🎮 Rock, Paper, Scissors Game
 
-# Rock-Paper-Scissors Game
+Welcome to the Rock, Paper, Scissors game! This simple and fun game allows you to challenge the computer in a classic game of Rock, Paper, Scissors. It tracks scores and displays choices for both the player and the computer.
 
-![Rock-Paper-Scissors Game Icon](https://img.icons8.com/ios-filled/50/000000/rock-paper-scissors.png)
+## 🚀 Features
 
-A simple Rock-Paper-Scissors game built with React. Test your luck against the computer and see who scores higher!
-
-## 🎮 Demo
-
-![Rock-Paper-Scissors Gameplay](https://media.giphy.com/media/3o7aD7U7WAsx34g5cY/giphy.gif)
-
-## 📥 Installation
-
-To get started with the Rock-Paper-Scissors game, follow these steps:
-
-1. **Clone the Repository**
-
-   ```bash
-   git clone https://github.com/yourusername/rock-paper-scissors.git
-   ```
-
-2. **Navigate to the Project Directory**
-
-   ```bash
-   cd rock-paper-scissors
-   ```
-
-3. **Install Dependencies**
-
-   Make sure you have Node.js and npm installed. Then run:
-
-   ```bash
-   npm install
-   ```
-
-4. **Start the Development Server**
-
-   ```bash
-   npm start
-   ```
-
-   The game will be available at [http://localhost:3000](http://localhost:3000).
-
-## 🧩 How to Play
-
-1. **Choose Your Move**: Click on one of the options: Rock, Paper, or Scissors.
-2. **See the Result**: The computer will make a random choice, and the result will be displayed.
-3. **Check the Scores**: Your score and the computer's score will be updated after each round.
+- **Interactive Gameplay**: Choose between Rock, Paper, or Scissors and play against the computer.
+- **Score Tracking**: Keep track of your wins and the computer’s wins.
+- **Responsive Design**: Works on various screen sizes with a responsive layout.
+- **Visual Feedback**: Displays choices and results with interactive elements.
 
 ## 🔧 Technologies Used
 
-- **React**: JavaScript library for building user interfaces.
-- **Tailwind CSS**: Utility-first CSS framework for custom styling.
+- **React**: For building the user interface.
+- **Tailwind CSS**: For styling and responsive design.
 
-## 💻 Project Structure
+## 🛠️ Installation
 
-- **`src/Components/Game.jsx`**: The main game component where the game logic and UI are handled.
-- **`public/Untitled-1.png`, `public/Untitled-2.png`, `public/Untitled-3.png`**: Image assets for the game choices (Rock, Paper, Scissors).
+To get started with the project locally, follow these steps:
 
-## 🤝 Contributing
+1. **Clone the repository**:
+    ```bash
+    git clone https://github.com/yourusername/rock-paper-scissors.git
+    ```
 
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature/YourFeature`).
-3. Make your changes and commit (`git commit -am 'Add new feature'`).
-4. Push to the branch (`git push origin feature/YourFeature`).
-5. Create a new Pull Request.
+2. **Navigate to the project directory**:
+    ```bash
+    cd rock-paper-scissors
+    ```
 
-## 📜 License
+3. **Install dependencies**:
+    ```bash
+    npm install
+    ```
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+4. **Start the development server**:
+    ```bash
+    npm start
+    ```
 
-## 🧑‍💻 Author
+   Open `http://localhost:3000` in your browser to see the game in action.
 
-- **Your Name** - [yourusername](https://github.com/yourusername)
+## 💡 Usage
 
-## 📬 Contact
+1. Click on one of the choices (Rock, Paper, Scissors) to make your selection.
+2. The computer will randomly select its choice.
+3. The game will display the result (You won! / Computer won! / It's a tie!) and update the score.
+4. Your choice and the computer’s choice will be displayed.
 
-Feel free to reach out if you have any questions or feedback:
+## 📦 Project Structure
 
-- **Email**: your.email@example.com
-- **GitHub**: [yourusername](https://github.com/yourusername)
+- `src/`: Contains all the source code.
+  - `components/`: React components including the main `Game` component.
+  - `styles/`: CSS and Tailwind configuration.
+- `public/`: Static assets such as images.
 
----
+## 🔗 Links
 
-### Tips for Adding Visuals:
+- [Live Demo](https://subh-rockpaperscissor.netlify.app/)
 
-- **Icon**: Use a suitable icon for your project from [Icons8](https://icons8.com) or another icon source.
-- **GIF**: You can create a GIF of your game in action using screen recording tools like [Loom](https://www.loom.com/) or [GIPHY Capture](https://giphy.com/apps/giphycapture). Upload it to a platform like [Giphy](https://giphy.com/) or [Imgur](https://imgur.com/) and use the link in the README.
+## 📑 License
 
-Replace `yourusername` and `your.email@example.com` with your actual GitHub username and email address. Update the repository URL and other placeholders to match your project details.
+This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
+
+## 👥 Contributing
+
+Contributions are welcome! Please fork the repository and submit a pull request. For major changes, please open an issue first to discuss what you would like to change.
+
+## ✉️ Contact
+
+For any questions or feedback, feel free to reach out:
+
+- **Email**: subhammazumdar8757@gmail.com
+- **LinkedIn**: [Subham Mazumdar](https://www.linkedin.com/in/subham-mazumdar-00342922b/)
+
+Happy coding! 🎉
