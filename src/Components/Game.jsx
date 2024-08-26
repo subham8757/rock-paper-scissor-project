@@ -37,7 +37,7 @@ const Game = () => {
 
   useEffect(() => {
     handleRes();
-  }, [handleRes]);
+  }, [value, handleRes]);
 
   return (
     <div className="p-4 sm:p-6 lg:p-8">
