@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 
 const Game = () => {
   const [value, setValue] = useState("");
@@ -7,6 +7,17 @@ const Game = () => {
   const [userScore, setUserScore] = useState(0);
   const [computerScore, setComputerScore] = useState(0);
   const data = ["rock", "paper", "scissors"];
+
+  // Memoize handleRes to avoid unnecessary re-renders
+  const handleRes = useCallback(() => {
+    if (value) {
+      const randIndex = Math.floor(Math.random() * data.length);
+      const computerChoice = data[randIndex];
+      setComvalue(computerChoice);
+      const result = determineWinner(value, computerChoice);
+      setWin(result);
+    }
+  }, [value, data]);
 
   const determineWinner = (userChoice, computerChoice) => {
     if (userChoice === computerChoice) {
@@ -17,26 +28,16 @@ const Game = () => {
       (userChoice === "rock" && computerChoice === "scissors") ||
       (userChoice === "scissors" && computerChoice === "paper")
     ) {
-      setUserScore(prevScore => prevScore + 1); 
+      setUserScore(prevScore => prevScore + 1);
       return "You won!";
     }
-    setComputerScore(prevScore => prevScore + 1); 
+    setComputerScore(prevScore => prevScore + 1);
     return "Computer won!";
   };
 
-  const handleRes = () => {
-    if (value) {
-      const randIndex = Math.floor(Math.random() * data.length);
-      const computerChoice = data[randIndex];
-      setComvalue(computerChoice);
-      const result = determineWinner(value, computerChoice);
-      setWin(result);
-    }
-  };
-
   useEffect(() => {
-    if (value) handleRes();
-  }, [value]);
+    handleRes();
+  }, [handleRes]);
 
   return (
     <div className="p-4 sm:p-6 lg:p-8">
